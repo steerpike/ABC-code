@@ -16,6 +16,12 @@ include('vimeo.class.php');
 <script type="text/javascript">
 	$(document).ready(function() {
 	    $('#yt-player').player({id:'yt', media:'R4EfGGP_DXg', flashHeight: 300});
+		/*
+		Apparently the vimeo api exposes javascript functionality in its
+		media player which I never realised until just now. We can take a stab
+		at adding the vimeo player to the latest iteration of the jquery
+		accessible media player plugin. 
+		*/
 	    $('#vimeo-player').player({id:'vimeo', type:'vimeo', media:7809605});
 	});
 </script>
@@ -31,7 +37,7 @@ include('vimeo.class.php');
 	$vim->set_var('_unique_id','rww');
 	$vim->set_var('_api_call','channel');
 	$vim->set_var('_request_name','videos');
-	$vim->set_var('_num_display',1);
+	$vim->set_var('_num_display',2);
 	$vim->request(); //for most calls we can stop at request() and do
 	//what we want with the resulting information.
 	//For this example though, the class has built in rendering
