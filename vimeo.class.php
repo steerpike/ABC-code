@@ -11,12 +11,12 @@
 		//and a api call type
 		var $_api_call = '';
 		//vimeo api calls of all types require a some kind of
-		//unique key, username, channelname, albumn_id, etc
+		//unique key: username, channelname, albumn_id, etc
 		var $_unique_id = '';
 		//the request name being sent to the api
 		var $_request_name = '';
 		//Vimeo very kindly allows us to request a response as a 
-		//php object. Normally json would be a good choice, but for 
+		//php array. Normally json would be a good choice, but for 
 		//simplicity we just default to php.
 		var $_response_format = 'php';
 		//number of videos to display
@@ -36,6 +36,7 @@
 				endforeach;
 			}
 			$output = $this->curl_wrapper($this->get_api_call());
+			//Convert response depending on format
 			switch($this->get_var('_response_format')) {
 				case 'php':
 					$output = unserialize($output);
@@ -78,7 +79,7 @@
 			}
 		}
 		//Try and keep all the html rendering in a single function.
-		//Templating would be nicer.
+		//TODO: Templating would be nicer.
 		function render_single_video($result) {
 			$oembed = $this->get_video($result['url']);
 			echo '<div>';

@@ -15,14 +15,14 @@ include('vimeo.class.php');
 <script type="text/javascript" src="js/jquery.player.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-	    $('#yt-player').player({id:'yt', media:'R4EfGGP_DXg', flashHeight: 300});
+	    $('#yt-player').player({id:'yt', media:'R4EfGGP_DXg', flashHeight: 600});
 		/*
 		Apparently the vimeo api exposes javascript functionality in its
 		media player which I never realised until just now. We can take a stab
 		at adding the vimeo player to the latest iteration of the jquery
 		accessible media player plugin. 
 		*/
-	    $('#vimeo-player').player({id:'vimeo', type:'vimeo', media:7809605});
+	    $('#vimeo-player').player({id:'vimeo', type:'vimeo', media:984675});
 	});
 </script>
 <title>
